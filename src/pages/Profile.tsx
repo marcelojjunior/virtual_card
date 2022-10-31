@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import queryString from 'query-string';
 
-import ProfileData from '../assets/profiles/marcelo.json';
 
 function Profile() {
     let { name }:any = useParams();

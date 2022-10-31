@@ -2,8 +2,6 @@ import { useState } from 'react';
 import './../styles/main.css';
 import QRCode from 'qrcode';
 
-//import * as fs from 'fs';
-
 function Home() {
     
   const [text, setText] = useState('');
@@ -19,20 +17,6 @@ function Home() {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData)
     
-    //const fs = require('fs') 
-    //const saveData = (data: any) => {
-    //    const finished = (err: any) => {
-    //        if(err){
-    //            console.error(err)
-    //            return;
-    //        }
-    //    }
-    //    const jsonData = JSON.stringify(data)
-    //    fs.writeFile('test.json', jsonData, finished)
-    //}
-
-    //saveData(data)
-
     console.log('handleSubmit', data);
     localStorage.setItem('saveData', JSON.stringify(data));
   };
@@ -49,7 +33,7 @@ function Home() {
 
   return (
     <div className="container h-screen w-screen mx-auto flex flex-col items-center">
-      <h1 className="text-3xl text-white font-black mt-20">QR Code Image Generator</h1>
+      <h1 className="text-3xl text-white font-black mt-16">QR Code Image Generator</h1>
       <div className="mt-10">
         <form className="flex flex-col gap-5" action="" onSubmit={handleSubmit}>
           <div className="flex">
@@ -68,11 +52,14 @@ function Home() {
             <button type="submit" className="text-white bg-slate-600 py-2 rounded-md w-40" onClick={() => generateQrCode() }>Generate Image</button>
           </div>
         </form>
-        <div className='flex justify-center mt-4'>
+        <div className='flex flex-col justify-center items-center mt-4'>
           {imageUrl ? (
+            <>
             <a href={imageUrl} download>
               <img src={imageUrl} alt="img" />
             </a>
+            <h3 className="text-1xl text-white mt-2">Click to download the image.</h3>
+            </>
           ) : null}
         </div>
       </div>
