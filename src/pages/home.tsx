@@ -16,9 +16,7 @@ function Home() {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData)
-    
     console.log('handleSubmit', data);
-    localStorage.setItem('saveData', JSON.stringify(data));
   };
 
   const generateQrCode = async () => {
