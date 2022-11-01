@@ -1,10 +1,7 @@
-import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link,
-  useParams
+  Route
 } from "react-router-dom";
 import Home from "./pages/home";
 import Profile from "./pages/Profile";
