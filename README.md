@@ -10,7 +10,7 @@
 
 ## 🧾 Project Information
 
-**Description:** The project aims to generate a QR Code with all your data on one page.
+**Description:** The project aims to generate a QR Code with all your data on one page. The strategy used to show data on the scanned page was to pass the information through the code.
 
 <br>
 
